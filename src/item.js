@@ -5,4 +5,6 @@ function Item(name, sell_in, quality) {
 }
 
 
-module.exports = Item
+module.exports = {
+    Item
+}
