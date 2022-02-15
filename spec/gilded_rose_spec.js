@@ -4,7 +4,7 @@ describe("Gilded Rose", function() {
 
   it("should decrease quality every day", function() {
     const newItem = [new Item('test', 4, 6)]
-    const updateQualityItems = newItem.updateQuality()
+    const updateQualityItems = updateQuality(newItem)
 
     expect(updateQualityItems[0].sell_in).toEqual(3)
     expect(updateQualityItems[0].quality).toEqual(5)
