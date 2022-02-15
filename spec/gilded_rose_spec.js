@@ -1,10 +1,11 @@
 const { Item } = require('../src/item')
+const { update_quality } = require('../src/gilded_rose')
 
 describe("Gilded Rose", function() {
 
   it("should decrease quality every day", function() {
     const newItem = [new Item('test', 4, 6)]
-    const updateQualityItems = updateQuality(newItem)
+    const updateQualityItems = update_quality(newItem)
 
     expect(updateQualityItems[0].sell_in).toEqual(3)
     expect(updateQualityItems[0].quality).toEqual(5)
