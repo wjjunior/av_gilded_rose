@@ -1,8 +1,16 @@
+const { Item } = require('../src/item')
+
 describe("Gilded Rose", function() {
 
-  it("should degrade quality twice if sell_in is less than zero", function() {
-    update_quality();
+  it("should decrease quality every day", function() {
+    const newItem = [new Item('test', 4, 6)]
+    const updateQualityItems = newItem.updateQuality()
+
+    expect(updateQualityItems[0].sell_in).toEqual(3)
+    expect(updateQualityItems[0].quality).toEqual(5)
   });
+
+  //should degrade quality twice if sell_in is less than zero
 
   //should throw if quality is negative
 
