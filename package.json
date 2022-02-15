@@ -1,0 +1,31 @@
+{
+  "name": "gilded-rose-javascript",
+  "version": "1.0.0",
+  "description": "If you want to get cracking on the JavaScript source then do this:",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests --no-cache",
+    "watch": "npm test -- --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guyroyse/gilded-rose-javascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/guyroyse/gilded-rose-javascript/issues"
+  },
+  "homepage": "https://github.com/guyroyse/gilded-rose-javascript#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "testRegex": ".*spec.js$",
+    "testEnvironment": "node"
+  }
+}
