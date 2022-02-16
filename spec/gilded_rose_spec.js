@@ -82,9 +82,13 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(6)
   })
 
-  //should increase Backstage pass quality by 2 when 10 days or less
+  it("should drop Backstage pass quality to 0 if sell_in is less than 0", () => {
+    const newItem = [new Item('Backstage', 0, 5)]
+    const updateQualityItems = update_quality(newItem)
 
-  //should increase Backstage pass quality by 3 when 5 days or less
+    expect(updateQualityItems[0].sell_in).toEqual(-1)
+    expect(updateQualityItems[0].quality).toEqual(0)
+  })
 
   //should drop Backstage pass quality to 0 after the sell_in date
 
