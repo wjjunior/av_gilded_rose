@@ -50,8 +50,13 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(3)
   })
 
+  it("should increase Backstage pass quality by 2 when 10 days", () => {
+    const newItem = [new Item('Backstage', 10, 3)]
+    const updateQualityItems = update_quality(newItem)
 
-  //shoulf throw if tries to sell Sulfuras
+    expect(updateQualityItems[0].sell_in).toEqual(9)
+    expect(updateQualityItems[0].quality).toEqual(5)
+  })
 
   //should increase Backstage pass quality by 2 when 10 days or less
 
