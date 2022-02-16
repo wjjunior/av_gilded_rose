@@ -90,7 +90,13 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(0)
   })
 
-  //should drop Backstage pass quality to 0 after the sell_in date
+  it("should decrease Conjured quality twice", () => {
+    const newItem = [new Item('Conjured', 5, 5)]
+    const updateQualityItems = update_quality(newItem)
+
+    expect(updateQualityItems[0].sell_in).toEqual(4)
+    expect(updateQualityItems[0].quality).toEqual(3)
+  })
 
   //should Conjured itens degrees quality twice as normal
 
