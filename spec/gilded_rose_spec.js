@@ -42,8 +42,14 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(50)
   })
 
+  it("should not sell Sulfuras", () => {
+    const newItem = [new Item('Sulfuras', 3, 3)]
+    const updateQualityItems = update_quality(newItem)
 
-  //should throw if quality is greater than 50
+    expect(updateQualityItems[0].sell_in).toEqual(3)
+    expect(updateQualityItems[0].quality).toEqual(3)
+  })
+
 
   //shoulf throw if tries to sell Sulfuras
 
