@@ -66,6 +66,14 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(5)
   })
 
+  it("should increase Backstage pass quality by 3 when 5 days", () => {
+    const newItem = [new Item('Backstage', 5, 3)]
+    const updateQualityItems = update_quality(newItem)
+
+    expect(updateQualityItems[0].sell_in).toEqual(4)
+    expect(updateQualityItems[0].quality).toEqual(6)
+  })
+
   //should increase Backstage pass quality by 2 when 10 days or less
 
   //should increase Backstage pass quality by 3 when 5 days or less
