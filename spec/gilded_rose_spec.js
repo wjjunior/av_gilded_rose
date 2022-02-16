@@ -19,9 +19,12 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].sell_in).toEqual(-2)
   })
 
-  //should degrade quality twice if sell_in is less than zero
+  it("should not degrade quality if is zero", () => {
+    const newItem = [new Item('test', 3, 0)]
+    const updateQualityItems = update_quality(newItem)
 
-  //should throw if quality is negative
+    expect(updateQualityItems[0].quality).toEqual(0)
+  })
 
   //should increase quality when Aged Brie gets older
 
