@@ -26,6 +26,14 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(0)
   })
 
+  it("should increase quality if is Aged Brie when gets older", () => {
+    const newItem = [new Item('Aged Brie', 3, 3)]
+    const updateQualityItems = update_quality(newItem)
+
+    expect(updateQualityItems[0].sell_in).toEqual(2)
+    expect(updateQualityItems[0].quality).toEqual(4)
+  })
+
   //should increase quality when Aged Brie gets older
 
   //should throw if quality is greater than 50
