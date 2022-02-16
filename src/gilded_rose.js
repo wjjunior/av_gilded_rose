@@ -42,7 +42,7 @@ function update_quality(items) {
       if (items[i].name != 'Aged Brie') {
         if (!(items[i].name).includes('Backstage')) {
           if (items[i].quality > 0) {
-            if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
+            if (!(items[i].name).includes('Sulfuras')) {
               items[i].quality = items[i].quality - QUALITY_TAX
             }
           }
