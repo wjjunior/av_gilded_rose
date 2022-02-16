@@ -32,11 +32,17 @@ function update_quality(items) {
               items[i].quality = items[i].quality + QUALITY_TAX
             }
           }
+          if(items[i].sell_in < 1) {
+            items[i].quality = 0
+          }
         }
       }
     }
     if (!(items[i].name).includes('Sulfuras')) {
       items[i].sell_in = items[i].sell_in - 1;
+      if((items[i].name).includes('Backstage') && items[i].sell_in < 0) {
+        items[i].quality = 0
+      }
     }
     if (items[i].sell_in < 0) {
       if (items[i].name != 'Aged Brie') {
