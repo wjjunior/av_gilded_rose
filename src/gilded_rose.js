@@ -12,7 +12,7 @@ items.push(new Item('Conjured Mana Cake', 3, 6));
 
 function update_quality(items) {
   for (var i = 0; i < items.length; i++) {
-    if (items[i].name != 'Aged Brie' && items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
+    if (items[i].name != 'Aged Brie' && !(items[i].name).includes('Backstage')) {
       if (items[i].quality > 0) {
         if (!(items[i].name).includes('Sulfuras')) {
           items[i].quality = items[i].quality - QUALITY_TAX
@@ -21,7 +21,7 @@ function update_quality(items) {
     } else {
       if (items[i].quality < 50) {
         items[i].quality = items[i].quality + QUALITY_TAX
-        if (items[i].name == 'Backstage passes to a TAFKAL80ETC concert') {
+        if ((items[i].name).includes('Backstage')) {
           if (items[i].sell_in < 11) {
             if (items[i].quality < 50) {
               items[i].quality = items[i].quality + QUALITY_TAX
@@ -40,7 +40,7 @@ function update_quality(items) {
     }
     if (items[i].sell_in < 0) {
       if (items[i].name != 'Aged Brie') {
-        if (items[i].name != 'Backstage passes to a TAFKAL80ETC concert') {
+        if (!(items[i].name).includes('Backstage')) {
           if (items[i].quality > 0) {
             if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
               items[i].quality = items[i].quality - QUALITY_TAX
