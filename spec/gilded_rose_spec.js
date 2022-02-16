@@ -11,6 +11,14 @@ describe("Gilded Rose", function() {
     expect(updateQualityItems[0].quality).toEqual(5)
   });
 
+  it("should degrade quality twice if sell_in is less than zero", () => {
+    const newItem = [new Item('test', -1, 6)]
+    const updateQualityItems = update_quality(newItem)
+
+    expect(updateQualityItems[0].quality).toEqual(4)
+    expect(updateQualityItems[0].sell_in).toEqual(-2)
+  })
+
   //should degrade quality twice if sell_in is less than zero
 
   //should throw if quality is negative
