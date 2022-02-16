@@ -17,6 +17,9 @@ function update_quality(items) {
         if (!(items[i].name).includes('Sulfuras')) {
           items[i].quality = items[i].quality - QUALITY_TAX
         }
+        if((items[i].name).includes('Conjured')) {
+          items[i].quality = items[i].quality - QUALITY_TAX
+        }
       }
     } else {
       if (items[i].quality < 50) {
